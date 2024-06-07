@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from '../NavBar'
 
 const BookList = () => {
+  const [data,changeData]=useState(
+    [
+      {"title":"Alchemist","author":"Paulo Coilo","year":2016,"price":599},
+      {"title":"Engine","author":"Randy Roysson","year":2016,"price":999},
+      {"title":"Dracon","author":"Felicia Rodrigez","year":2024,"price":1099},
+      {"title":"Vinland Saga","author":"James Norton","year":2004,"price":799},
+      {"title":"Jujutsu Kaisen","author":"Akage Yamamoto","year":2012,"price":699},
+    ]
+  )
   return (
     <div>
         <NavBar/>
@@ -23,60 +32,19 @@ const BookList = () => {
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th>Alchemist</th>
-      <td>Mark</td>
-      <td>2020</td>
-      <td>599</td>
-    </tr>
-    <tr>
-      <th>Alchemist</th>
-      <td>Mark</td>
-      <td>2020</td>
-      <td>599</td>
-    </tr>
-    <tr>
-      <th>Alchemist</th>
-      <td>Mark</td>
-      <td>2020</td>
-      <td>599</td>
-    </tr>
-    <tr>
-      <th>Alchemist</th>
-      <td>Mark</td>
-      <td>2020</td>
-      <td>599</td>
-    </tr>
-    <tr>
-      <th>Alchemist</th>
-      <td>Mark</td>
-      <td>2020</td>
-      <td>599</td>
-    </tr>
-    <tr>
-      <th>Alchemist</th>
-      <td>Mark</td>
-      <td>2020</td>
-      <td>599</td>
-    </tr>
-    <tr>
-      <th>Alchemist</th>
-      <td>Mark</td>
-      <td>2020</td>
-      <td>599</td>
-    </tr>
-    <tr>
-      <th>Alchemist</th>
-      <td>Mark</td>
-      <td>2020</td>
-      <td>599</td>
-    </tr>
-    <tr>
-      <th>Alchemist</th>
-      <td>Mark</td>
-      <td>2020</td>
-      <td>599</td>
-    </tr>
+    {
+      data.map(
+        (value,index)=>{
+          return <tr>
+          <td>{value.title}</td>
+          <td>{value.author}</td>
+          <td>{value.year}</td>
+          <td>{value.price}</td>
+        </tr>
+        }
+      )
+    }
+    
   </tbody>
 </table>
             </div>
